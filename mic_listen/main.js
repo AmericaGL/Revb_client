@@ -18,15 +18,14 @@ Article: https://software.intel.com/en-us/html5/articles/intel-xdk-iot-edition-n
 
 var mraa = require('mraa'); //require mraa
 console.log('MRAA Version: ' + mraa.getVersion()); //write the mraa version to the console
+var Mic = require("./Model/Microphone");
+var Thermo = require('./Model/Thermometer');
 
-var myDigitalPin6 = new mraa.Gpio(0); //setup digital read on Digital pin #6 (D6)
-myDigitalPin6.dir(mraa.DIR_IN); //set the gpio direction to input
-
-periodicActivity(); //call the periodicActivity function
-
-function periodicActivity() //
-{
-  var myDigitalValue =  myDigitalPin6.read(); //read the digital value of the pin
-  console.log('Gpio is ' + myDigitalValue); //write the read value out to the console
-  setTimeout(periodicActivity,1000); //call the indicated function after 1 second (1000 milliseconds)
+function loop () {
+    console.log('T°: ' + Thermo.read());
+    if (Thermo.isAbove(30)) {
+        console.log("Hey, it's kinda hot in here !");
+    }
 }
+
+setInterval(loop, 1000);
