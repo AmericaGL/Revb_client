@@ -21,8 +21,8 @@
         "name": "icon.png"
       },
       "main.js": {
-        "previousModTime": 1461495941000,
-        "modified": 1461495941000,
+        "previousModTime": 1461497384000,
+        "modified": 1461497384000,
         "seen": true,
         "name": "main.js"
       },
@@ -33,8 +33,8 @@
         "name": "mic_listen.xdk"
       },
       "mic_listen.xdke": {
-        "previousModTime": 1461495425000,
-        "modified": 1461495425000,
+        "previousModTime": 1461497499000,
+        "modified": 1461497499000,
         "seen": true,
         "name": "mic_listen.xdke"
       },
@@ -69,8 +69,8 @@
         "name": "Controller/ListenCtl.js"
       },
       "Controller/TextToSpeech.js": {
-        "previousModTime": 1461455154000,
-        "modified": 1461455154000,
+        "previousModTime": 1461497497000,
+        "modified": 1461497497000,
         "seen": true,
         "name": "Controller/TextToSpeech.js"
       },
@@ -85,14 +85,29 @@
         "modified": 1461428960000,
         "seen": true,
         "name": "Model/BluezSpeaker.js"
+      },
+      "StT.sh": {
+        "previousModTime": 1461497573000,
+        "modified": 1461497573000,
+        "seen": true,
+        "name": "StT.sh"
+      },
+      "TtS.sh": {
+        "previousModTime": 1461496901000,
+        "modified": 1461496901000,
+        "seen": true,
+        "name": "TtS.sh"
+      },
+      "Weather.opus": {
+        "previousModTime": 1461493427000,
+        "modified": 1461493427000,
+        "seen": true,
+        "name": "Weather.opus"
       }
     },
     "boardFileStatus": {
-      "main.js": {
-        "previousModTime": 1461496169602
-      },
-      "Controller/ListenCtl.js": {
-        "previousModTime": 1461496169602
+      "StT.sh": {
+        "previousModTime": 1461497576879
       }
     }
   }

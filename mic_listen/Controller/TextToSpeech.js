@@ -1,11 +1,17 @@
+var path = '.';
+var spawn = require('child_process').spawn;
+var fs = require('fs');
+
 //Execute the script for Speech to Text from the wav or opus file to the output.json (response from Bluemix) and output2.json (transcript)
+function speechToText() {
+    console.log('Speech To Text');
  var deploySh = spawn('sh', [ path + 'StT.sh' ]);
  deploySh.stdout.pipe(process.stdout);
- var content = fs.readFileSync("output.json");
+ var content = fs.readFileSync("./output.json");
  var jsonContent = JSON.parse(content);
  var transcript = jsonContent.results[0].alternatives[0].transcript
  transcript = '{\"text\":\"'+transcript+'\"}';
- fs.writeFileSync("output2.json",transcript);
+ fs.writeFileSync("./output2.json",transcript);
  if (transcript.indexOf("temperature") > -1){
    console.log("temperature call");
  }
@@ -24,7 +30,14 @@
          //}
      });
  }
+}
 
 //Execute Text to Speech from the output2.json to the TtS.wav
+function textToSpeech () {
+    console.log('tts');
  var deploySh = spawn('sh', [ path + 'TtS.sh' ]);
  deploySh.stdout.pipe(process.stdout);
+}
+
+exports.stt = speechToText;
+exports.tts = textToSpeech;
