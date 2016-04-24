@@ -18,14 +18,17 @@ Article: https://software.intel.com/en-us/html5/articles/intel-xdk-iot-edition-n
 
 var mraa = require('mraa'); //require mraa
 console.log('MRAA Version: ' + mraa.getVersion()); //write the mraa version to the console
-var Mic = require("./Model/Microphone");
-var Thermo = require('./Model/Thermometer');
+//var Mic = require("./Model/Microphone");
+//var Thermo = require('./Model/Thermometer');
+var ListenCtl = require('./Controller/ListenCtl');
 
-function loop () {
-    console.log('T°: ' + Thermo.read());
-    if (Thermo.isAbove(30)) {
-        console.log("Hey, it's kinda hot in here !");
-    }
-}
-
-setInterval(loop, 1000);
+//function loop () {
+//    console.log('T°: ' + Thermo.read());
+//    if (Thermo.isAbove(30)) {
+//        console.log("Hey, it's kinda hot in here !");
+//    }
+//}
+console.log('hello');
+ListenCtl.init();
+setInterval(ListenCtl.abc, 1000);
+//setInterval(loop, 1000);
